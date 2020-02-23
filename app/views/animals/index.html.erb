@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Animals <p><%=link_to 'Logout', destroy_user_session_path %></p></h1>
+<h1>Animals <p><%=link_to 'Logout', destroy_user_session_path , method: :delete %></p></h1>
 
 <form class="form-inline my-2 my-lg-0" action="/search">
   <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search" aria-label="Search">
@@ -45,4 +45,4 @@
 </div>
 <br>
 
-<%= link_to 'New Animal', new_animal_path %>
+<p><%= link_to 'New Animal', new_animal_path %></p>

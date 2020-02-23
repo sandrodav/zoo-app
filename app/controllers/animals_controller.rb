@@ -32,19 +32,19 @@ class AnimalsController < ApplicationController
   # POST /animals
   # POST /animals.json
   def create
-      @animal = Animal.new(animal_params)
-      @animal.user = current_user
+    @animal = Animal.new(animal_params)
+    @animal.user = current_user
 
-      respond_to do |format|
-        if @animal.save
+    respond_to do |format|
+      if @animal.save
           format.html { redirect_to @animal, notice: 'Animal was successfully created.' }
           format.json { render :show, status: :created, location: @animal }
-        else
+      else
           format.html { render :new }
           format.json { render json: @animal.errors, status: :unprocessable_entity }
-        end
       end
     end
+  end
 
     # PATCH/PUT /animals/1
     # PATCH/PUT /animals/1.json
