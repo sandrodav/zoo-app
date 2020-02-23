@@ -1,0 +1,23 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.jumbotron {
+  background-image: asset-url('cover.jpg');
+  background-size: cover;
+  height: 550px;
+}
+
+.center {
+  text-align: center;
+}
+
+.article-title{
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.article-body {
+  border-top: 1x solid #eaeaea;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}

@@ -7,6 +7,14 @@ class AnimalsController < ApplicationController
     @animals = Animal.order(:name).page params[:page]
   end
 
+  def search
+      if params[:q].blank?
+       'Please input search word'
+      else
+        @animals = Animal.where("title LIKE ?", "%" + params[:q] + "%")
+      end
+  end
+
   # GET /animals/1
   # GET /animals/1.json
   def show
@@ -73,12 +81,6 @@ class AnimalsController < ApplicationController
       params.require(:animal).permit(:title, :color, :amount, :user_id)
     end
 
-    def search
-        if params[:q].blank?
-         'Please input search word'
-        else
-          @animals = Animal.where("title LIKE ?", "%" + params[:q] + "%")
-        end
-    end
+
 
 end

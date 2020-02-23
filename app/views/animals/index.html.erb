@@ -9,30 +9,35 @@
 
 <table>
   <thead>
-    <tr>
-      <th>Title</th>
-      <th>Color</th>
-      <th>Amount</th>
-      <th>User Email</th>
-      <th colspan="3"></th>
-    </tr>
+    <div class="animal-title">
+      <tr>
+        <th>Title</th>
+        <th>Color</th>
+        <th>Amount</th>
+        <th>User Email</th>
+        <th colspan="3"></th>
+      </tr>
+    </div>
   </thead>
 
   <tbody>
     <div align="center">
       <%= paginate @animals %>
     </div>
-    <% @animals.each do |animal| %>
-      <tr>
-        <td><%= animal.title %></td>
-        <td><%= animal.color %></td>
-        <td><%= animal.amount %></td>
-        <td><%= animal.user.email %></td>
-        <td><%= link_to 'Show', animal %></td>
-        <td><%= link_to 'Edit', edit_animal_path(animal) %></td>
-        <td><%= link_to 'Destroy', animal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <div class="animal-body">
+      <% @animals.each do |animal| %>
+        <tr>
+          <td><%= animal.title %></td>
+          <td><%= animal.color %></td>
+          <td><%= animal.amount %></td>
+          <td><%= animal.user.email %></td>
+          <td><%= link_to 'Show', animal %></td>
+          <td><%= link_to 'Edit', edit_animal_path(animal) %></td>
+          <td><%= link_to 'Destroy', animal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </div>
+
   </tbody>
 </table>
 <div align="center">
