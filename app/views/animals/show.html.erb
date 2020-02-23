@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @animal.title %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @animal.color %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @animal.amount %>
+</p>
+
+<p>
+  <strong>UserEmail:</strong>
+  <%= @animal.user.email %>
+</p>
+
+<%= link_to 'Edit', edit_animal_path(@animal) %> |
+<%= link_to 'Back', animals_path %>

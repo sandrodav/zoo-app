@@ -1,0 +1,28 @@
+<h3>Search Result</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Color</th>
+      <th>Amount</th>
+      <th>User Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <% if @animals.blank? %>
+ 		 <%= "Such animal can't be found" %>
+		<% else %>
+		 <tr>
+ 		 <% @animasl.each do |animal| %>
+ 		   <td><%= animal.title %></td>
+		   <td><%= animal.color %></td>
+		   <td><%= animal.amount %></td>
+		 </tr>
+     <% end %>
+    <% end %>
+  </tbody>
+</table>
